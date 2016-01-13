@@ -1,0 +1,38 @@
+<template name="site_item">
+    <div class="container">
+        <a href="{{url}}">{{title}}</a>
+        <p>{{description}}</p>
+        {{log}}
+        <div>
+            <form class="js-save-comment-form">
+                <div class="form-group">
+                    <label for="comment">Comment:</label>
+                    <textarea class="form-control" rows="5" required id="comment" placeholder="Enter a comment..."></textarea>
+
+                </div>
+                <button type="submit" class="btn btn-primary">submit</button>
+            </form>
+            <div>Comments:</div>
+            <div>
+                <ul>
+                    {{#each comments}} {{>comment_item}} {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>
+<template name="comment_item">
+    <li>
+        <p>Comment: {{comment}}</p>
+        <p>By: {{user}}</p>
+        <p>Date: {{date}}</p>
+    </li>
+</template>
+<template name="about">
+    <div class="container">
+        <h1>Website rating app!</h1>
+        <ol>
+            {{#each about_list}} {{>about_item}} {{/each}}
+        </ol>
+    </div>
+</template>

@@ -1,0 +1,61 @@
+<!-- template that displays several website items -->
+<template name="website_list">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-group searchBoxWrap">
+                    <input type="text" class="form-control searchBox" placeholder="Search for..." value="">
+                </div>
+            </div>
+            <div class="col-md-12">
+                {{search_results}}
+            </div>
+        </div>
+        <div class="row">
+            {{#each websites}} {{>website_item}} {{/each}}
+        </div>
+
+    </div>
+</template>
+
+<!-- template that displays individual website entries -->
+<template name="website_item">
+    <div class="col-md-4 site-item">
+        <div class="media">
+
+            <!--
+            <div class="media-left media-top site-logo">
+                {{#if logo}}
+                <img class="media-object icon" src="{{logo}}" alt=""> {{/if}}
+            </div>
+-->
+
+            <div class="media-body">
+                <div class="site-title">
+                    {{#if logo}}
+                    <img class="media-object icon" src="{{logo}}" alt=""> {{/if}}
+                    <a href="{{url}}"><h4 class="">{{title}}</h4></a>
+                </div>
+                <div class="site-des">
+                    <p>
+                        {{description}}
+                    </p>
+                </div>
+                <div class="site-create">
+                    <p>Created by : {{getUser createdBy}}, on {{createdOn}}</p>
+                </div>
+                <div class="">
+                    <a href="#" class="btn btn-default js-upvote">
+                        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                        <span>{{upvote.length}}</span>
+                    </a>
+                    <a href="#" class="btn btn-default js-downvote">
+                        <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+                        <span> {{downvote.length}}</span>
+                    </a>
+                    <a href="/sites/{{_id}}">Check comments</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

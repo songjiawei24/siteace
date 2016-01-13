@@ -1,0 +1,28 @@
+<head>
+    <title>siteace</title>
+</head>
+
+<body>
+    <!-- navbar  - you will be putting the login functions here -->
+    <!--    {{> navBar}} {{> website_form}} {{> website_list}}-->
+
+</body>
+<template name="ApplicationLayout">
+    {{> yield "navbar"}} {{> yield "form"}} {{> yield "main"}}
+</template>
+
+<template name="navBar">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/sites">Site Ace</a>
+                <a class="navbar-text navbar-left" href="/about">About</a>
+                <p class="navbar-text navbar-left">{{> loginButtons}}</p>
+            </div>
+        </div>
+    </nav>
+</template>
+
+<template name="about_item">
+    <li>{{content}}</li>
+</template>

@@ -1,0 +1,49 @@
+/* CSS declarations go here */
+
+.hidden_div {
+    display: none;
+}
+
+
+/* site list icon */
+
+img.icon,
+.site-logo {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+    float: left;
+}
+
+
+/* headers */
+
+.navbar-text {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+
+/* search box */
+
+.searchBoxWrap {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+
+/* site list items */
+
+.site-item {
+    margin-bottom: 20px;
+}
+
+.site-title {
+    min-height: 48px;
+}
+
+.site-des {
+    min-height: 150px;
+    overflow: auto;
+}
